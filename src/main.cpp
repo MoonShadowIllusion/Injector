@@ -1,5 +1,4 @@
 ﻿#include <Windows.h>
-#include <filesystem>
 #include <iostream>
 #include <vector>
 #include "inject.h"
@@ -45,7 +44,7 @@ int main(int argc, char **argv) try {
     {
         string argv0 = argv[0];
         argv0 = argv0.erase(argv0.length() - strlen(".exe"));
-        config_path = strdup((filesystem::current_path().string() + "\\" + argv0 + ".ini").c_str());
+        config_path = strdup((argv0 + ".ini").c_str());
     }
     char game_path[MAX_PATH]{ 0 };
     char dll_path[MAX_PATH]{ 0 };
